@@ -1,1 +1,121 @@
-d1 $ n "c a f e"
+d1 $ n "c a f e" # sound "supermandolin"
+d1 $ n (off 0.125 (|+ 7) "<c a f e>") # sound "supermandolin"
+
+d2 $ "bass1:0 [bass3:6,bass3:7] bass1:0"
+d2 $ "bass1:0*2 [bass3:6*2 bass3:6] bass1:0" # gain 0.6--
+
+d1 $ n (off 0.125 (|+ 7)  "<c*2 a(3,8) f(3,8,2) e*2>") # sound "supermandolin" # legato 2
+
+d1 $ jux rev $ n (off 0.125 (|+ 12) $ off 0.125 (|+ 7)  "<c*2 a(3,8) f(3,8,2) e*2>") # sound "supermandolin" # legato 2
+
+d3 $ note "c'maj e'min" # s "gtr"
+d3 $ n "c'major7'o" # s "superpiano"
+
+d1 $ n ("c e f" |+ "<'maj 'min>") # s "supermandolin"
+
+d1 $ sound "drum:3"
+d1 $ s "drum" # 2
+d1 $ silence 
+d2 $ silence
+
+setcps 0.5 --
+d1 $ s "bd*2 bd*2 hh*2 bd*2 sn*2 bd hh*2 bd"
+d2 $ n ("c e f" |+ "<'maj 'min>") # s "supermandolin"
+
+d1 $ sound "bd/2 [bd bd]/2"
+d3 $ sound "[bd bd sn:5]*2 [bd sn:3]*3" --
+d1 $ sound "[[bd bd] bd sn:5] [bd sn:3]"
+d1 $ sound "[[bd [bd bd bd bd]] [bd sn:5]] [bd sn:3]"
+
+d1 $ sound "bd <sd cp arpy>"
+d1 $ sound "<bd sn> <sd [cp cp]> <bd [cp cp]>"
+d1 $ sound "[sn,cp]"
+d1 $ sound "bd!3 sn"
+
+d3 $ sound "808cy:10*2!5"
+d3 $ chop 2 $ sound "ade:7"
+d3 $ sound "breath:0"
+d3 $ sound "[breath:0 breath:0]"
+d3 $ sound "breath:0 [breath:0 breath:0]"
+d3 $ sound "[[breath:0 ~ breath:0] [breath:0 ~ breath:0]]*2"
+d3 $ sound "breath:0*2 [breath:0 breath:0*2]"
+d3 $ sound "breath:0*2 [breath:0!3 breath:0*2]"
+d3 $ sound "[breath:0]*2 [breath:0 breath:0]"
+mute 3
+
+
+
+d4 $ jux (rev) $ chop 2 $ n "0 .. 3" # sound "moog" # speed "1 0.5 1 0.5"
+d5 $ jux (rev) $ chop 2 $ n "0 .. 3" # sound "arpy" # vowel "a e i 0" 
+d4 $ chop 2 $ n "0 .. 3" # sound "moog"
+d5 $ n "c*2 a c e*2 c f" # sound "superhoover" # note "0 12 0 7 7 "
+d5 $ jux (rev) $ n "c*2 a c e*2 c f" # sound "superhoover" # note "0 12 -12 -7 -7 "
+
+
+mute 4
+unmute 4
+
+mute 5
+unmute 5
+
+solo 1
+unsolo 2
+
+mute 1
+unmute 1
+
+d1 $ sound "drum drum drum drum" # vowel "u"
+d1 $ sound "drum drum drum drum" # vowel "a o e e"
+d1 $ sound "drum drum drum drum" # vowel "a o e p"
+d1 $ sound "drum drum drum drum" # vowel "a o e"
+d1 $ vowel "a o ~ i" # sound "drum"
+d1 $ sound "drum drum drum drum" # vowel "<a o e e>"
+d1 $ every 4 (# vowel "a o") $ sound "arpy arpy:1 arpy:2 arpy:3"
+
+d1 $ sound "arpy arpy:1 arpy:2 arpy:3"
+d1 $ jux (rev) $ sound "arpy arpy:1 arpy:2 arpy:3"
+d1 $ jux (hurry 2) $ sound "arpy arpy arpy:1 arpy:2"
+
+d1 $ n (run 4) # sound "arpy"
+d1 $ sound "[voodoo voodoo:3 voodoo*2, arpy arpy:4 arpy:2]"
+
+d1 $ sound "[voodoo voodoo:3, arpy arpy:4 arpy:2]"
+d1 $ sound "{voodoo voodoo:3, arpy arpy:4 arpy:2}"
+d1 $ sound "[drum bd hh bd, can can:2 can:3 can:4 can:2]"
+d1 $ sound "{drum bd hh bd, can can:2 can:3 can:4 can:2}"
+d1 $ sound "[bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5]"
+d1 $ sound "{bd sn, can:2 can:3 can:1, arpy arpy:1 arpy:2 arpy:3 arpy:5}"
+
+d1 $ sound "bd(5,8)"
+d1 $ sound "bd(3,8) sn*2"
+d1 $ sound "bd(3,8) sn(5,8)"
+
+d1 $ sound "bev"
+d1 $ sound "bev" # cut 1
+hush
+
+d1 $ sound "bev ~" # cut 1
+d2 $ slow 4 $ sound "pebbles ~" # cut 1
+
+d1 $ sound "bev ~ bev ~" # legato 1
+d1 $ chop 32 $ sound "bev"
+
+d1 $ slow 4 $ chop 4 $ sound "arpy:1 arpy:2 arpy:3 arpy:4"
+d1 $ slow 4 $ striate 4 $ sound "arpy:1 arpy:2 arpy:3 arpy:4"
+
+d1 $ randslice 32 $ sound "bev"
+d1 $ loopAt 8 $ sound "bev"
+
+d1 $ loopAt "<8 4 16>" $ chop 64 $  sound "bev*4" # cut 1
+d1 $ rev $ loopAt 8 $ chop 128 $ sound "bev"
+
+d1 $ n "0 4 7" # sound "superpiano"
+
+d1 $ sound "bd*4" # n "<0 4>" # note "0 12 -7 -12"
+
+d1 $ note "c a f e" # s "supermandolin"
+d1 $ note "0 9 5 4" # s "supermandolin"
+
+d1 $ note "c4 a3 f6 e5" # s "supermandolin"
+
+d1 $ note "c a f e" # s "superpiano" |- note 24

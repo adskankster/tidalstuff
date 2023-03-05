@@ -1,0 +1,18 @@
+d1 $ fast 2 $ s "ho:4 hc ho:4 hc"
+
+d1 $ fast 2 $ s "ho:4 hc ho:4 hc" # cut 1
+
+drawLine $ "x(3,8)"
+
+d1 $ s "sax(3,8)" # cut 1
+
+d1 $ s "sax(3,8)" # legato 1
+
+d2 $ n "<4, 4>" # s "break" # legato 1
+
+setcps 0.6
+d1 $ splice 8 ("0 1 [2 3] ~ 4 5 6 7 8") $ sound "break:4"
+
+d1 $ 
+
+hush

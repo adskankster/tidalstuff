@@ -1,0 +1,49 @@
+d1 $ n "0 [0 2] [1 1] 2" # sound "kick"
+
+d1 $ sound "bd bd sd sd sd sd bd bd bd bd bd bd"
+
+d2 $ sound "clap"
+
+d2 $ n "0 [0 2] [~ ~] 2" # sound "cpu"
+
+d1 silence
+d2 silence
+d3 silence
+d4 silence
+
+hush
+
+
+
+d1 $ sound "hi lo*3"
+
+d1 $ sound "hi [hi lo bd]*0.5"
+
+d1 $ soung "hi lo/2"
+
+d1 $ fast 2 $ s "{[bd sd sd sd, arpy arpy:3 arpy:4 arpy:2], [kick:0 kick1]*2}"
+
+d1 $ fast 2 $ sound "[hi, <lo cpu:2>] <arpy [arpy:1 arpy:1] [arpy:2 arpy:3] [arpy:3 arpy:2]>"
+
+d1 $ fast 1.5 $ n "0 0 [1 1] 2" # sound "cpu bd [bd sd] bd" # squiz "6 6 [16 16] 8"
+
+d1 $ sound "hi <arpy arpy:1 arpy:2 arpy:3>"
+
+d6 $ every 3 (# squiz "8") $ n "[0 0] [3 4] [6 7] [1 2]" # s "sd" 
+
+-- Let's run two patterns at once:
+d1 $ n "0 2 [3 5] [4 7]" # sound "cpu"
+
+d2 $ n "0(3,8) 8*8" # sound "cpu2"
+  # squiz 5
+  # cps "0.5 0.75"
+
+setcps 0.7
+
+d1 $ fast "1 2" $ n "0 2 [3 5] [4 7]" # s "cpu"
+
+hush
+
+d1 $ fast 2 $ every 4 (# squiz "5 8") $ every 3 (# squiz "2 8") $ n "0 [1 1] [0 0] 2" # sound "bd"
+
+d1 $ fast 2 $ every "2 3" (# squiz "2 8") $ n "0 [1 1] [0 0] 2" # sound "bd"
